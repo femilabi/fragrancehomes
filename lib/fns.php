@@ -429,7 +429,8 @@ function get_available_locations()
         $state_locations[$l["state"]] = json_decode($l["cities"], true);
     }
     $APP->assign("state_locations", $state_locations);
-    return $state_locations;
+    // return $state_locations;
+    return $DB->get_error();
 }
 
 function get_popular_listings($limit = 3)
