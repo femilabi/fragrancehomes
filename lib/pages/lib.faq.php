@@ -1,0 +1,1 @@
+<?php $APP->setTitle("Frequently Asked Questions");

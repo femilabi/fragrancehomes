@@ -1,0 +1,32 @@
+      </td>
+     </tr>
+     <tr>
+      <td bgcolor="#010101" style="padding: 30px 30px 30px 30px;">
+       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 11px;">
+           &reg; <?=ADMIN_NAME?>, <?=date('Y')?><br/>
+           The <a href="<?=BASE_DIR?>" style="color: #ffffff;"><font color="#ffffff">Website</font></a> Team
+          </td>
+          <td align="right">
+           <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+             <td>
+             </td>
+             <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+             <td>
+             </td>
+             <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+            </tr>
+           </table>
+         </td>
+         </tr>
+       </table>
+      </td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+ </table>
+</body>
+</html>

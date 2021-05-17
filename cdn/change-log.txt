@@ -1,0 +1,3 @@
+plugins/js/jquery.are-you-sure.js
+plugins/ellipsis
+global/class/table,content.php(lib)

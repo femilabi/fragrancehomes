@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+#RewriteCond %{HTTPS} !=on
+#RewriteRule .* https://www.example.com%{REQUEST_URI} [R,L]
+RewriteBase /
+ErrorDocument 404 /index.php?p=404
+##Version control
+RewriteRule ^(.+)_v[0-9]+\.(js|css)$ $1.$2 [QSA,L]
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
