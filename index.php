@@ -18,6 +18,9 @@ if (isset($_SESSION[USER_SESSION_HOLDER]) && is_array($_SESSION[USER_SESSION_HOL
 	$USER = new User($_SESSION[USER_SESSION_HOLDER]["id"]);
 }
 
+var_dump($DB->get_query_set("SHOW TABLES"));
+exit;
+
 //Get content type header for output
 $headers = getallheaders();
 $content_type = @$headers["contentType"];
