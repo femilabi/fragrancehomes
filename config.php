@@ -1,6 +1,6 @@
 <?php
 //Paths
-define("APP_PROTOCOL", "http://");
+define("APP_PROTOCOL", "https://");
 define("HOST", $_SERVER["HTTP_HOST"]);
 define("HOME_DIR", APP_PROTOCOL . HOST . "/"); //App home page URL
 define("BASE_DIR", HOME_DIR); //Parent App URL if any
@@ -22,7 +22,7 @@ define("DB_PREFIX", "fh_");
 define("DB_NAME", "gethwjpj_server");
 define("DB_USER", "gethwjpj_server");
 define("DB_PASS", "^r(L89r@Rmsb");
-define("DB_HOST", "localhost");
+define("DB_HOST", "gethsempray.org");
 
 //Session
 define("USER_SESSION_HOLDER", "app_user");
@@ -36,9 +36,9 @@ define("ALLOW_EMAIL", 0);
 define("ADMIN_NAME", "Fragrance Homes & Realtors");
 define("ADMIN_EMAIL", "server@c4cgrill.com");
 define("ADMIN_DOMAIN", "c4cgrill.com");
-define("SMTP_HOST", "c4cgrill.com");
+define("SMTP_HOST", "gethsempray.org");
 define("SMTP_PORT", 465);
-define("SMTP_ENCRYPT", ""); //"ssl", "tls"
+define("SMTP_ENCRYPT", "ssl"); //"ssl", "tls"
 define("SMTP_USERNAME", "server@c4cgrill.com");
 define("SMTP_PASSWORD", "A\$smYVU=WvH*");
 

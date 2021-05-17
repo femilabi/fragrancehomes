@@ -1,26 +1,6 @@
-<?php
-ini_set("display_errors", 1);
-ini_set("display_startup_errors", 1);
-error_reporting(E_ALL);
-
-session_start();
-require_once(dirname(__FILE__) . "/interface.php");
-date_default_timezone_set("GMT");
-
-//time session out
-if (!(isset($_SESSION["timeoutlastvisit"]) && (time() - $_SESSION["timeoutlastvisit"]) < (60 * 24 * 24))) {
-	session_destroy();
-	session_start();
-}
-$_SESSION["timeoutlastvisit"] = time();
-
-if (isset($_SESSION[USER_SESSION_HOLDER]) && is_array($_SESSION[USER_SESSION_HOLDER]) && isset($_SESSION[USER_SESSION_HOLDER]["id"])) {
-	$USER = new User($_SESSION[USER_SESSION_HOLDER]["id"]);
-}
-
-$DB->multi_query("SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = \"+00:00\";
+SET time_zone = "+00:00";
 
 
 CREATE TABLE `fh_account_activation_hash` (
@@ -590,9 +570,9 @@ CREATE TABLE `fh_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `fh_users` (`id`, `username`, `password`, `email`, `fullname`, `role`, `role_id`, `joindate`, `lastvisitdate`, `online`, `active`, `meta`) VALUES
-(25, '08165461631', '$2y$10\$Bfqfwxzj27gW.I1w1dDXgudxhs9n2MWp3Rf.5RDPNtsAKXwlzIzkW', 'oderinwalefemi150@gmail.com', 'Oderinwale Oluwafemi Peter', 'user', 1, 1620805833, 1620805833, 0, 1, ''),
-(26, 'oderinwalefemi150@gmail.com', '$2y$10\$zjR8.i7dMDciABm8u8bhkuarKJPD3D3Iv/BsMXBL1UScG137V7cQS', 'oderinwalefm@gmail.com', 'Oluwafemi Oderinwale', 'admin', 1, 1620826516, 1621144221, 1, 1, ''),
-(27, '08165461630', '$2y$10\$b5xlYo2s03PRAI6q6OrHhuMCByWRvvg3Ms6hCJfdL7KfQSYAXMI1u', 'oderinwalefemi@gmail.com', 'Oderinwale Peter', 'admin', 1, 1620827669, 1620827669, 0, 1, '');
+(25, '08165461631', '$2y$10$Bfqfwxzj27gW.I1w1dDXgudxhs9n2MWp3Rf.5RDPNtsAKXwlzIzkW', 'oderinwalefemi150@gmail.com', 'Oderinwale Oluwafemi Peter', 'user', 1, 1620805833, 1620805833, 0, 1, ''),
+(26, 'oderinwalefemi150@gmail.com', '$2y$10$zjR8.i7dMDciABm8u8bhkuarKJPD3D3Iv/BsMXBL1UScG137V7cQS', 'oderinwalefm@gmail.com', 'Oluwafemi Oderinwale', 'admin', 1, 1620826516, 1621144221, 1, 1, ''),
+(27, '08165461630', '$2y$10$b5xlYo2s03PRAI6q6OrHhuMCByWRvvg3Ms6hCJfdL7KfQSYAXMI1u', 'oderinwalefemi@gmail.com', 'Oderinwale Peter', 'admin', 1, 1620827669, 1620827669, 0, 1, '');
 
 ALTER TABLE `fh_account_activation_hash`
   ADD PRIMARY KEY (`id`);
@@ -685,15 +665,3 @@ ALTER TABLE `fh_state_locations`
 ALTER TABLE `fh_users`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
-");
-
-//Get content type header for output
-$headers = getallheaders();
-$content_type = @$headers["contentType"];
-if ($content_type == "json" || @$_GET["contentType"] == "json") $APP->setIsJSON(true);
-if ($content_type == "html" || @$_GET["contentType"] == "html") $APP->setIsAJAX(true);
-
-//Output content
-$APP->execute();
-$APP->printOutput();
-$DB->close();
