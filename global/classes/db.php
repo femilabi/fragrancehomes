@@ -25,7 +25,7 @@ class DB
 			$this->con_id = $DB->get_con_id();
 			return $this->con_id;
 		} else {
-			$connection = mysqli_connect($this->db_host, $this->db_user, $this->db_pass);
+			$connection = mysqli_connect($this->db_host, $this->db_user, $this->db_pass, '', 3306);
 			mysqli_select_db($connection, $this->db_name);
 			$this->con_id = $connection;
 			return $connection;

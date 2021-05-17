@@ -19,10 +19,10 @@ define("WEBAPP_CONFIG", INCLUDE_PATH . "app/app_config.php");
 
 //Database
 define("DB_PREFIX", "fh_");
-define("DB_NAME", "gethwjpj_server");
-define("DB_USER", "gethwjpj_server");
-define("DB_PASS", "^r(L89r@Rmsb");
-define("DB_HOST", "gethsempray.org");
+define("DB_NAME", "sql4413121");
+define("DB_USER", "sql4413121");
+define("DB_PASS", "VBUcWtKI3K");
+define("DB_HOST", "sql4.freemysqlhosting.net");
 
 //Session
 define("USER_SESSION_HOLDER", "app_user");
@@ -36,7 +36,7 @@ define("ALLOW_EMAIL", 0);
 define("ADMIN_NAME", "Fragrance Homes & Realtors");
 define("ADMIN_EMAIL", "server@c4cgrill.com");
 define("ADMIN_DOMAIN", "c4cgrill.com");
-define("SMTP_HOST", "gethsempray.org");
+define("SMTP_HOST", "162.0.232.224");
 define("SMTP_PORT", 465);
 define("SMTP_ENCRYPT", "ssl"); //"ssl", "tls"
 define("SMTP_USERNAME", "server@c4cgrill.com");
