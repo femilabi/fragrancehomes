@@ -423,6 +423,7 @@ function get_available_locations()
     global $DB, $APP;
     if ($APP->get("state_locations")) return $APP->get("state_locations");
     $locations = $DB->get_query_set("SELECT * FROM " . DB_PREFIX . "state_locations");
+    echo $DB->get_error();
     $state_locations = [];
     foreach ($locations as $l) {
         $state_locations[$l["state"]] = json_decode($l["cities"], true);
