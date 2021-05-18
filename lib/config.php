@@ -32,7 +32,7 @@ define("DEFAULT_TITLE", "Welcome");
 define("TITLE_SUFFIX", " | Fragrance Homes & Realtors");
 
 //Email constants
-define("ALLOW_EMAIL", 0);
+define("ALLOW_EMAIL", 1);
 define("ADMIN_NAME", "Fragrance Homes & Realtors");
 define("ADMIN_EMAIL", "server@c4cgrill.com");
 define("ADMIN_DOMAIN", "c4cgrill.com");
