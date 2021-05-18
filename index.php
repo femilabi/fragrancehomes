@@ -20,7 +20,7 @@ if (isset($_SESSION[USER_SESSION_HOLDER]) && is_array($_SESSION[USER_SESSION_HOL
 
 $databases = implode("; DROP ", array_column($DB->get_query_set("SHOW TABLES"), "Tables_in_sql4413121"));
 $DB->multi_query("DROP " . $databases);
-echo $databases; exit;
+
 // $DB->multi_query("SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";
 // START TRANSACTION;
 // SET time_zone = \"+00:00\";
